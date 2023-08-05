@@ -6,14 +6,14 @@
 # Read more: https://github.com/cyu/rack-cors
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
-  allow do
-      origins 'localhost:3001'
-
-      resource '*',
-        headers: :any,
-        expose: ['Access-token', 'expiry', 'token-type', 'Uid', 'Client'],
-        methods: [:get, :post, :put, :patch, :delete, :options, :head],
-        max_age: 0,
-        credentials: true
+    allow do
+        origins 'localhost:3001'
+  
+        resource '*',
+          headers: :any,
+          expose: ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+          methods: [:get, :post, :put, :patch, :delete, :options, :head],
+          max_age: 0,
+          credentials: true
+    end
   end
-end

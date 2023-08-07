@@ -12,4 +12,14 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :api do
+    namespace :v2 do
+      resources :stations, only: [:index]
+
+      resources :users do
+        resources :favorite_stations, only: [:index, :create, :destroy]
+      end
+    end
+  end
 end

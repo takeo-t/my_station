@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_29_075353) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_07_113256) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "change_stations", id: :serial, force: :cascade do |t|
+    t.string "change_station"
+    t.string "change_station_kana"
+    t.string "change_on_train"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "favorite_stations", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -22,6 +30,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_29_075353) do
     t.index ["station_id"], name: "index_favorite_stations_on_station_id"
     t.index ["user_id", "station_id"], name: "index_favorite_stations_on_user_id_and_station_id", unique: true
     t.index ["user_id"], name: "index_favorite_stations_on_user_id"
+  end
+
+  create_table "station2s", id: false, force: :cascade do |t|
+    t.string "line_name"
+    t.string "station_num"
+    t.string "station_name"
+    t.string "station_name_kana"
+    t.integer "track_num"
+    t.string "position"
+    t.boolean "rpd_ltd_exp"
+    t.boolean "limited_exp"
+    t.boolean "rpd_exp"
+    t.boolean "exp"
+    t.boolean "semi_exp"
+    t.string "position_color"
+    t.string "color"
+    t.boolean "change_station"
+    t.integer "id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stations", force: :cascade do |t|

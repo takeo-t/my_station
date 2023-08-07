@@ -1,0 +1,2 @@
+class ChangeStation < ApplicationRecord
+end

@@ -24,5 +24,8 @@ module MyStation
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
 
+    config.assets.enabled = true
+    config.assets.version = '1.0'
+
   end
 end

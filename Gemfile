@@ -50,3 +50,7 @@ gem 'devise_token_auth'
 gem 'devise'
 gem 'omniauth'
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'sass-rails'
+gem 'uglifier'
+gem 'turbolinks', '~> 5'

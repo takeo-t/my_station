@@ -8,6 +8,8 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
         origins 'localhost:3001'
+        origins 'https://sta.orion-raptured.com/'
+
   
         resource '*',
           headers: :any,

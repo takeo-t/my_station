@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v2 do
-      resources :stations, only: [:index]
+      resources :stations, only: [:index]do
+      collection do
+        get :change_stations
+      end
+    end
 
       resources :users do
         resources :favorite_stations, only: [:index, :create, :destroy]

@@ -54,3 +54,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'sass-rails'
 gem 'uglifier'
 gem 'turbolinks', '~> 5'
+
+group :development do
+  gem 'rails-erd'
+end

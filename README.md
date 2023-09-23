@@ -8,7 +8,7 @@
   ```
 
 3. ER図  
-[![ER図](./my_station_ER.jpg)
+![ER図](images/my_station_ER.jpg)
 
 
 5. 作者情報  

@@ -7,8 +7,10 @@
   　　https://github.com/takeo-t/meitetsu_nagoya
   ```
 
-3. セットアップ  
-4. デプロイ手順  
+3. ER図  
+[![ER図](./my_station_ER.jpg)
+
+
 5. 作者情報  
    Taiki Takeo  
    X(Twitter) @118satellite  

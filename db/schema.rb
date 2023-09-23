@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_12_054130) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_23_023122) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_12_054130) do
     t.bigint "station_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "station2_id"
     t.index ["station_id"], name: "index_favorite_stations_on_station_id"
     t.index ["user_id", "station_id"], name: "index_favorite_stations_on_user_id_and_station_id", unique: true
     t.index ["user_id"], name: "index_favorite_stations_on_user_id"

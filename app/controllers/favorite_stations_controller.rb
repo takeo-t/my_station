@@ -5,6 +5,8 @@ class FavoriteStationsController < ApplicationController
     end
   
     def create
+      user = User.find_by(id: params[:user_id])
+      return render json: { error: 'User not found' }, status: :not_found unless user
       @favorite_station = User.find(params[:user_id]).favorite_stations.create(station_id: params[:station_id])
       if @favorite_station.save
         render json: @favorite_station, status: :created
@@ -12,10 +14,16 @@ class FavoriteStationsController < ApplicationController
         render json: @favorite_station.errors, status: :unprocessable_entity
       end
     end
-  
+
     def destroy
       @favorite_station = FavoriteStation.find_by(user_id: params[:user_id], station_id: params[:station_id])
       @favorite_station.destroy
       head :no_content
     end
+
+    private
+
+      def favorite_station_params
+        params.permit(:station_id)
+      end
   end

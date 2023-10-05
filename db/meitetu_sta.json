@@ -833,7 +833,7 @@
         "change_station": false
     },
     {
-        "id": 160101,
+        "id": 160102,
         "line_name": "名古屋本線",
         "station_num": "NH39",
         "station_name": "西枇杷島",
@@ -850,7 +850,7 @@
         "change_station": false
     },
     {
-        "id": 160101,
+        "id": 160103,
         "line_name": "名古屋本線",
         "station_num": "NH41",
         "station_name": "新川橋",

@@ -14,6 +14,7 @@ module Api
       if @favorite_station.save
         render json: @favorite_station, status: :created
       else
+        puts @favorite_station.errors.full_messages
         render json: { errors: @favorite_station.errors.full_messages }, status: :unprocessable_entity
       end
     end
@@ -28,7 +29,7 @@ module Api
     private
 
       def favorite_station_params
-        params.require(:favorite_station).permit(:station_id)
+        params.require(:favorite_station).permit(:station2_id)
       end
     end
   end

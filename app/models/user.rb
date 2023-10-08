@@ -5,5 +5,5 @@ class User < ApplicationRecord
     include DeviseTokenAuth::Concerns::User
 
     has_many :favorite_stations
-    has_many :stations, through: :favorite_stations
+    has_many :station2s, through: :favorite_stations
 end

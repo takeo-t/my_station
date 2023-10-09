@@ -26,7 +26,9 @@ module Api
 
 
     def destroy
-      @favorite_station = FavoriteStation.find_by(user_id: params[:user_id], station_id: params[:station2_id])
+      @favorite_station = FavoriteStation.find_by(user_id: params[:user_id], station2_id: params[:id])
+
+      if @favorite_station
       @favorite_station.destroy
       head :no_content
       else
